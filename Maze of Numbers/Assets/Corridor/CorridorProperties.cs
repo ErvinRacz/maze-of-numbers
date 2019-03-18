@@ -9,30 +9,33 @@ using UnityEditor;
 [RequireComponent(typeof(Material))]
 public class CorridorProperties : MonoBehaviour
 {
-
-    [SerializeField] private Material corridorBaseMaterial;
-    [SerializeField] private float length = 3.0f;
+    [SerializeField] private float length = 4.0f;
     [SerializeField] private float thickness = 0.2f;
-    [SerializeField] private float width = 3f;
+    [SerializeField] private float width = 2.0f;
+
 
     private Component[] components;
+    [SerializeField] private Material corridorBaseMaterial;
 
     private void Awake()
     {
         //UpdateCorridorParameters();
     }
 
-#if UNITY_EDITOR
     void Start()
     {
-        UpdateCorridorParameters();
+        //UpdateCorridorParameters();
     }
-#endif
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnValidate()
+    {
+        UpdateCorridorParameters();
     }
 
     private void UpdateCorridorParameters()
@@ -42,7 +45,7 @@ public class CorridorProperties : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.localScale = new Vector3(length, thickness, width);
-            //child.gameObject.GetComponent<MeshRenderer>().material = corridorBaseMaterial;
+            child.gameObject.GetComponent<MeshRenderer>().material = corridorBaseMaterial;
         }
     }
 }
