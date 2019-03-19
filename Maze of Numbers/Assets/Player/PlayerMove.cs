@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     private CharacterController characterController;
 
-    [SerializeField] private AnimationCurve jumpFallOff;
+    [SerializeField] private AnimationCurve jumpFallOff = null;
     [SerializeField] private float jumpMultiplier = 9.0f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 

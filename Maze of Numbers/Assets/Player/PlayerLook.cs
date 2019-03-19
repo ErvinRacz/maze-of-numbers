@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Transform))]
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private string mouseXInputName = "Mouse X";
     [SerializeField] private string mouseYInputName = "Mouse Y";
     [SerializeField] private float mouseSensitivity = 150.0f;
 
-    [SerializeField] private Transform playerBodyTransform;
+    [SerializeField] private Transform playerBodyTransform = null;
 
     // xAxisClamp is needed to not flip over with the mouse
     private float xAxisClamp;
