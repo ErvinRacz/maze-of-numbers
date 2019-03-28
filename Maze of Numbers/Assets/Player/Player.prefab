@@ -167,6 +167,11 @@ PrefabInstance:
       propertyPath: playerBodyTransform
       value: 
       objectReference: {fileID: 8829532131217195198}
+    - target: {fileID: 9044178093513744038, guid: 1d374405efe517d49a1c79d2b6861ba7,
+        type: 3}
+      propertyPath: m_RenderingPath
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d374405efe517d49a1c79d2b6861ba7, type: 3}
 --- !u!4 &8829532131172902945 stripped
