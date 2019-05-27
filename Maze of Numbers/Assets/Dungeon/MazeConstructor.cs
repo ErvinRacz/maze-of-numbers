@@ -6,14 +6,21 @@ public class MazeConstructor : MonoBehaviour
 {
     public bool showDebug;
 
+    public GameObject junctionPrefab;
+
     void Awake()
     {
         
     }
 
-    public void GenerateNewMaze(int sizeRows, int sizeCols)
+    public void GenerateNewMaze(int size, TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
-        // stub to fill in
+        GameObject currentJunction;
+        for(int i = 0; i < size; i++)
+        {
+            currentJunction = Instantiate(junctionPrefab, new Vector3(55 * i, -5, 0), Quaternion.identity);
+            //currentJunction.GetComponentsInChildren()
+        }
     }
 
     void OnGUI()
@@ -51,5 +58,33 @@ public class MazeConstructor : MonoBehaviour
         }
 
         GUI.Label(new Rect(20, 20, 500, 500), msg);
+    }
+
+    private void PlaceStartTrigger(TriggerEventHandler callback)
+    {
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //go.transform.position = new Vector3(startCol * hallWidth, .5f, startRow * hallWidth); //TODO: 
+        go.name = "Start Trigger";
+        go.tag = "Generated";
+
+        go.GetComponent<BoxCollider>().isTrigger = true;
+        //go.GetComponent<MeshRenderer>().sharedMaterial = startMat;
+
+        TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
+        tc.callback = callback;
+    }
+
+    private void PlaceGoalTrigger(TriggerEventHandler callback)
+    {
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //go.transform.position = new Vector3(goalCol * hallWidth, .5f, goalRow * hallWidth);
+        go.name = "Treasure";
+        go.tag = "Generated";
+
+        go.GetComponent<BoxCollider>().isTrigger = true;
+        //go.GetComponent<MeshRenderer>().sharedMaterial = treasureMat;
+
+        TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
+        tc.callback = callback;
     }
 }
