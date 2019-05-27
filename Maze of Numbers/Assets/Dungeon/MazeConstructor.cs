@@ -7,6 +7,7 @@ public class MazeConstructor : MonoBehaviour
     public bool showDebug;
 
     public GameObject junctionPrefab;
+    public GameObject playerCamera;
 
     void Awake()
     {
@@ -16,10 +17,16 @@ public class MazeConstructor : MonoBehaviour
     public void GenerateNewMaze(int size, TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
         GameObject currentJunction;
+        Camera[] cameras;
         for(int i = 0; i < size; i++)
         {
             currentJunction = Instantiate(junctionPrefab, new Vector3(55 * i, -5, 0), Quaternion.identity);
-            //currentJunction.GetComponentsInChildren()
+            cameras = currentJunction.GetComponentsInChildren<Camera>();
+            foreach (var camera in cameras)
+            {
+                PortalCamera pcScript = camera.GetComponent<PortalCamera>();
+                pcScript.playerCamera = playerCamera.transform;
+            }
         }
     }
 
