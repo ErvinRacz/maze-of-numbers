@@ -25,7 +25,7 @@ public class MazeConstructor : MonoBehaviour
             foreach (var camera in cameras)
             {
                 PortalCamera pcScript = camera.GetComponent<PortalCamera>();
-                pcScript.playerCamera = playerCamera.transform;
+                pcScript.SetPlayerCamera(playerCamera.transform);
             }
         }
     }
