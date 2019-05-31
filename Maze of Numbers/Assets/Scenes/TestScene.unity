@@ -523,6 +523,11 @@ PrefabInstance:
       propertyPath: jumpMultiplier
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac, type: 3}
 --- !u!1 &1943684839
