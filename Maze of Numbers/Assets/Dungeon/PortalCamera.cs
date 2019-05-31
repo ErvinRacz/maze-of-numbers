@@ -9,7 +9,7 @@ public class PortalCamera : MonoBehaviour
     public Transform entrancePortal;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Quaternion q = Quaternion.FromToRotation(entrancePortal.transform.right, exitPortal.transform.right);
         Vector3 playerTransformRelativeToEntrancePortal = exitPortal.position + q * (entrancePortal.position - playerCamera.position);
