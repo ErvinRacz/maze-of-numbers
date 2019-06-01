@@ -7,25 +7,28 @@ public class MazeConstructor : MonoBehaviour
     public bool showDebug;
 
     public GameObject junctionPrefab;
-    public GameObject playerCamera;
-
-    void Awake()
-    {
-        
-    }
+    public Camera playerCamera;
+    public GameObject playerBody;
 
     public void GenerateNewMaze(int size, TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
         GameObject currentJunction;
         Camera[] cameras;
+        PortalTeleporterScript[] tpScripts;
         for(int i = 0; i < size; i++)
         {
             currentJunction = Instantiate(junctionPrefab, new Vector3(55 * i, -5, 0), Quaternion.identity);
             cameras = currentJunction.GetComponentsInChildren<Camera>();
+            tpScripts = currentJunction.GetComponentsInChildren<PortalTeleporterScript>();
             foreach (var camera in cameras)
             {
                 PortalCamera pcScript = camera.GetComponent<PortalCamera>();
                 pcScript.SetPlayerCamera(playerCamera.transform);
+            }
+
+            foreach (var tpScript in tpScripts)
+            {
+                tpScript.setPlayerBody(playerBody.transform);
             }
         }
     }
@@ -37,32 +40,7 @@ public class MazeConstructor : MonoBehaviour
             return;
         }
 
-        int[,] maze = new int[,]
-        {
-            {1, 1, 1},
-            {1, 0, 1},
-            {1, 1, 1}
-        };
-        int rMax = maze.GetUpperBound(0);
-        int cMax = maze.GetUpperBound(1);
-
-        string msg = "";
-
-        for (int i = rMax; i >= 0; i--)
-        {
-            for (int j = 0; j <= cMax; j++)
-            {
-                if (maze[i, j] == 0)
-                {
-                    msg += "....";
-                }
-                else
-                {
-                    msg += "==";
-                }
-            }
-            msg += "\n";
-        }
+        string msg = playerBody.transform.position + "";
 
         GUI.Label(new Rect(20, 20, 500, 500), msg);
     }

@@ -41,10 +41,6 @@ public class GameController : MonoBehaviour
     private void StartNewMaze()
     {
         generator.GenerateNewMaze(1, OnStartTrigger, OnGoalTrigger);
-
-        float x = 0;
-        float y = 1;
-        float z = 0;
         //player.transform.position = new Vector3(x, y, z);
 
         goalReached = false;
