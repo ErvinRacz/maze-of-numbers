@@ -453,11 +453,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8829532131217195198, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -513,10 +508,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1993606679423335045, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902946, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 8829532131217195197, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}
@@ -547,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993606679423335045, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac, type: 3}
