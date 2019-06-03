@@ -59,7 +59,6 @@ public class PortalTeleporterScript : MonoBehaviour
             // Since, the player is not teleported to the desired position right after this code 
             // gets to execute, we have to ensure, that we do not modify the values that were calculated once correctly.
             updateToSkipAmount = 3;
-            Debug.Log("asdadawd");
             inPortal = false;
         }
     }
