@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpMultiplier = 9.0f;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
+    public Vector3 PreviousPosition;
 
     private bool isJumping;
 
@@ -36,6 +37,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PreviousPosition = transform.position;
         PlayerMovement();
     }
 

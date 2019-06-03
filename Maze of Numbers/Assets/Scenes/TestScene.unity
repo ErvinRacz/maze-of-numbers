@@ -226,9 +226,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1913372526}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &292420560 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+--- !u!1 &526810193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8829532131172902946, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
     type: 3}
   m_PrefabInstance: {fileID: 1913372526}
   m_PrefabAsset: {fileID: 0}
@@ -451,8 +451,8 @@ MonoBehaviour:
   showDebug: 1
   junctionPrefab: {fileID: 8313303218185152105, guid: beee1e2bf1f7792449e79ee35dfbb4d9,
     type: 3}
-  playerCamera: {fileID: 292420560}
-  playerBody: {fileID: 229209513}
+  playerCamera: {fileID: 526810193}
+  player: {fileID: 229209513}
 --- !u!1001 &1913372526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460,6 +460,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902946, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.95686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8829532131217195198, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -515,50 +560,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902946, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
     - target: {fileID: 8829532131217195197, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}
       propertyPath: jumpMultiplier
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.7137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.95686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829532131172902975, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993606679423335045, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
         type: 3}

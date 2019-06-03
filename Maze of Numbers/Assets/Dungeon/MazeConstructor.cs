@@ -7,8 +7,10 @@ public class MazeConstructor : MonoBehaviour
     public bool showDebug;
 
     public GameObject junctionPrefab;
-    public Camera playerCamera;
-    public GameObject playerBody;
+    public GameObject playerCamera;
+    public GameObject player;
+
+   
 
     public void GenerateNewMaze(int size, TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
@@ -28,7 +30,7 @@ public class MazeConstructor : MonoBehaviour
 
             foreach (var tpScript in tpScripts)
             {
-                tpScript.setPlayerBody(playerBody.transform);
+                tpScript.setPlayerBody(player);
             }
         }
     }
@@ -40,7 +42,7 @@ public class MazeConstructor : MonoBehaviour
             return;
         }
 
-        string msg = playerBody.transform.position + "";
+        string msg = player.transform.position + "";
 
         GUI.Label(new Rect(20, 20, 500, 500), msg);
     }
