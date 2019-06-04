@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a48e3c9159379b498ab23b44916b14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: {fileID: 5231478408708513263}
-  destionation: {fileID: 5231478408708513263}
+  from: {fileID: 0}
+  destionation: {fileID: 0}
 --- !u!1 &622024755809519737
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a48e3c9159379b498ab23b44916b14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  from: {fileID: 459228826259766756}
-  destionation: {fileID: 459228826259766756}
+  from: {fileID: 0}
+  destionation: {fileID: 0}
 --- !u!114 &5541928649827445589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8930,6 +8930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetDisplay
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044178093513744038, guid: 1d374405efe517d49a1c79d2b6861ba7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9044178093513744039, guid: 1d374405efe517d49a1c79d2b6861ba7, type: 3}

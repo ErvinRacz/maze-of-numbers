@@ -13,6 +13,8 @@ public class PortalCamera : MonoBehaviour
     private void Start()
     {
         outPlaneTr = transform.parent.Find("RenderPlane");
+        var camera = GetComponent<Camera>();
+        camera.enabled = false;
     }
 
     void LateUpdate()
