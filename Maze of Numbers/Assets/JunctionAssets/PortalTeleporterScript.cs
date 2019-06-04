@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PortalTeleporterScript : MonoBehaviour
 {
-    private GameObject player;
+    private CharacterController player;
     private PlayerMove playerMoveScript;
     public Transform reciever;
 
@@ -20,9 +20,11 @@ public class PortalTeleporterScript : MonoBehaviour
 
     private void Update()
     {
-        if(updateToSkipAmount == 3)
+        if(updateToSkipAmount > 0)
         {
+            Debug.Log("++++" + player.transform.position);
             player.transform.position = playerTransformRelativeToEntrancePortal;
+            Debug.Log(player.transform.position);
         }
     }
 
@@ -50,6 +52,7 @@ public class PortalTeleporterScript : MonoBehaviour
             Quaternion q = Quaternion.FromToRotation(transform.right, reciever.right);
             playerTransformRelativeToEntrancePortal = reciever.position + q * (transform.position - player.transform.position);
             playerTransformRelativeToEntrancePortal.y = player.transform.position.y;
+            player.SimpleMove(new Vector3(0, 0, 0));
             player.transform.position = playerTransformRelativeToEntrancePortal;
 
             q = Quaternion.FromToRotation(transform.right, -reciever.right);
@@ -58,7 +61,7 @@ public class PortalTeleporterScript : MonoBehaviour
 
             // Since, the player is not teleported to the desired position right after this code 
             // gets to execute, we have to ensure, that we do not modify the values that were calculated once correctly.
-            updateToSkipAmount = 3;
+            updateToSkipAmount = 2;
             inPortal = false;
         }
     }
@@ -79,7 +82,7 @@ public class PortalTeleporterScript : MonoBehaviour
         }
     }
 
-    public void setPlayerBody(GameObject player)
+    public void setPlayerBody(CharacterController player)
     {
         this.player = player;
     }
