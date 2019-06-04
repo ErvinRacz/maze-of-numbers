@@ -7,91 +7,38 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private MazeConstructor generator;
-
     [SerializeField] private Text timeLabel;
-    [SerializeField] private Text scoreLabel;
 
     private DateTime startTime;
-    private int timeLimit;
-    private int reduceLimitBy;
-
-    private int score;
-    private bool goalReached;
+    private bool gameRunning = false;
+    int timeUsed;
 
     // Start is called before the first frame update
     void Start()
     {
-        generator = GetComponent<MazeConstructor>();
-        StartNewGame();
+
     }
 
-    private void StartNewGame()
+    public void StartNewGame()
     {
-        timeLimit = 80;
-        reduceLimitBy = 5;
+        gameRunning = true;
         startTime = DateTime.Now;
-
-        score = 0;
-        scoreLabel.text = score.ToString();
-
-        StartNewMaze();
     }
 
-    private void StartNewMaze()
+    public void FinishGame()
     {
-        //generator.GenerateNewMaze(1, OnStartTrigger, OnGoalTrigger);
-        //player.transform.position = new Vector3(x, y, z);
-
-        goalReached = false;
-        //player.enabled = true;
-
-        //restart timer
-        timeLimit -= reduceLimitBy;
+        gameRunning = false;
         startTime = DateTime.Now;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        //if (!player.enabled){return;}
-    
-        int timeUsed = (int)(DateTime.Now - startTime).TotalSeconds;
-        int timeLeft = timeLimit - timeUsed;
-
-        if (timeLeft > 0)
+        if (gameRunning)
         {
-            timeLabel.text = timeLeft.ToString();
+            timeUsed = (int)(DateTime.Now - startTime).TotalSeconds;
         }
-        else
-        {
-            timeLabel.text = "TIME UP";
-            // player.enabled = false;
-            Invoke("StartNewGame", 4);
-        }
-        */
-    }
 
-    private void OnGoalTrigger(GameObject trigger, GameObject other)
-    {
-        Debug.Log("Goal!");
-        goalReached = true;
-
-        score += 1;
-        scoreLabel.text = score.ToString();
-
-        Destroy(trigger);
-    }
-
-    private void OnStartTrigger(GameObject trigger, GameObject other)
-    {
-        if (goalReached)
-        {
-            Debug.Log("Finish!");
-            //player.enabled = false;
-
-            Invoke("StartNewMaze", 4);
-        }
+        timeLabel.text = timeUsed.ToString() + " sec";
     }
 }

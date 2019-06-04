@@ -13,6 +13,8 @@ public class PortalTeleporterScript : MonoBehaviour
     Vector3 playerTransformRelativeToEntrancePortal;
     bool inPortal = false;
 
+    Camera[] activeCameras;
+
     private void Start()
     {
         playerMoveScript = player.GetComponent<PlayerMove>();
