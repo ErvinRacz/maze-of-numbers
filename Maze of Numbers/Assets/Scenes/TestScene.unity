@@ -220,18 +220,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &229209513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8829532131217195168, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 1913372526}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &526810193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8829532131172902946, guid: 22b3605dc0dc2414fa0d1a4ccecd43ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 1913372526}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1171260196
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +388,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1359727432}
   - component: {fileID: 1359727433}
-  - component: {fileID: 1359727434}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -436,23 +423,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLabel: {fileID: 1171260198}
   scoreLabel: {fileID: 1186951661}
---- !u!114 &1359727434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359727431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7fc3f2ca2233144fb1f56f7207456ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showDebug: 1
-  junctionPrefab: {fileID: 8313303218185152105, guid: beee1e2bf1f7792449e79ee35dfbb4d9,
-    type: 3}
-  playerCamera: {fileID: 526810193}
-  player: {fileID: 229209513}
 --- !u!1001 &1913372526
 PrefabInstance:
   m_ObjectHideFlags: 0

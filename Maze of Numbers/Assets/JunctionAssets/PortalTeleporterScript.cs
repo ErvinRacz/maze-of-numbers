@@ -22,9 +22,9 @@ public class PortalTeleporterScript : MonoBehaviour
     {
         if(updateToSkipAmount > 0)
         {
-            Debug.Log("++++" + player.transform.position);
+            //Debug.Log("++++" + player.transform.position);
             player.transform.position = playerTransformRelativeToEntrancePortal;
-            Debug.Log(player.transform.position);
+            //Debug.Log(player.transform.position);
         }
     }
 
@@ -52,12 +52,12 @@ public class PortalTeleporterScript : MonoBehaviour
             Quaternion q = Quaternion.FromToRotation(transform.right, reciever.right);
             playerTransformRelativeToEntrancePortal = reciever.position + q * (transform.position - player.transform.position);
             playerTransformRelativeToEntrancePortal.y = player.transform.position.y;
-            player.SimpleMove(new Vector3(0, 0, 0));
+            //player.SimpleMove(new Vector3(0, 0, 0));
             player.transform.position = playerTransformRelativeToEntrancePortal;
 
-            q = Quaternion.FromToRotation(transform.right, -reciever.right);
             Vector3 newCameraDirection = q * player.transform.forward;
-            player.transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+            newCameraDirection.y = -newCameraDirection.y;
+            player.transform.rotation = Quaternion.LookRotation(-newCameraDirection, Vector3.up);
 
             // Since, the player is not teleported to the desired position right after this code 
             // gets to execute, we have to ensure, that we do not modify the values that were calculated once correctly.

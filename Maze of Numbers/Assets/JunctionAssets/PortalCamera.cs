@@ -5,20 +5,26 @@ using UnityEngine;
 public class PortalCamera : MonoBehaviour
 {
     private Transform playerCamera;
-    public Transform exitPortal;
-    public Transform entrancePortal;
+    private Transform outPlaneTr;
+    public Transform inPlaneTr;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        outPlaneTr = transform.parent.Find("RenderPlane");
+    }
+
     void LateUpdate()
     {
-        Quaternion q = Quaternion.FromToRotation(entrancePortal.transform.right, exitPortal.transform.right);
-        Vector3 playerTransformRelativeToEntrancePortal = exitPortal.position + q * (entrancePortal.position - playerCamera.position);
+        Quaternion q = Quaternion.FromToRotation(inPlaneTr.transform.right, outPlaneTr.transform.right);
+        Vector3 playerTransformRelativeToEntrancePortal = outPlaneTr.position + q * (inPlaneTr.position - playerCamera.position);
         playerTransformRelativeToEntrancePortal.y = playerCamera.position.y;
         transform.position = playerTransformRelativeToEntrancePortal;
 
-        q = Quaternion.FromToRotation(entrancePortal.transform.right, -exitPortal.transform.right);
         Vector3 newCameraDirection = q * playerCamera.forward;
-        transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+        newCameraDirection.y = -newCameraDirection.y;
+        transform.rotation = Quaternion.LookRotation(-newCameraDirection, Vector3.up);
     }
 
     public void SetPlayerCamera(Transform tr)

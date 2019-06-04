@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(CharacterController))]
 public class JunctionSetup : MonoBehaviour
 {
     public GameObject playerCamera;

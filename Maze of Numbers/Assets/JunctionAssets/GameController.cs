@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(MazeConstructor))]
+
 public class GameController : MonoBehaviour
 {
     private MazeConstructor generator;
