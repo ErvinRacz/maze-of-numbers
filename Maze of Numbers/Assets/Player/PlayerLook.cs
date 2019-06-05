@@ -13,6 +13,7 @@ public class PlayerLook : MonoBehaviour
 
     // xAxisClamp is needed to not flip over with the mouse
     private float xAxisClamp;
+    public bool lookEnabled = true;
 
     // Awake is called when the script instance is loaded
     private void Awake()
@@ -30,7 +31,9 @@ public class PlayerLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraRotation();
+        if (lookEnabled) {
+            CameraRotation();
+        }
     }
 
     private void LockCursor()

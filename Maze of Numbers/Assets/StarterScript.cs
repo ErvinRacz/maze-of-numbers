@@ -6,6 +6,7 @@ public class StarterScript : MonoBehaviour
 {
 
     public GameController gameController;
+    private bool forTheFirstTime = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,10 @@ public class StarterScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player") && forTheFirstTime)
         {
             gameController.StartNewGame();
+            forTheFirstTime = false;
         }
     }
 }
